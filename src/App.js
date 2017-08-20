@@ -7,7 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tile sound='sounds/canoe.ogg'></Tile>
+        <Tile sound='sounds/canoe.ogg' background='images/flashheart.jpg'></Tile>
+        <Tile sound='sounds/hailhydra.ogg' background='images/hydra.jpg'></Tile>
       </div>
     );
   }

@@ -32,7 +32,7 @@ class Tile extends Component {
   }
   render(props) {
     return (
-      <div className="Tile" onClick={ this.togglePlaying }>
+      <div className="Tile" onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
         <Play playing={this.state.playing} />
         <Sound url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
       </div>

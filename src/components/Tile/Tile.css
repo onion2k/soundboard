@@ -7,11 +7,17 @@
     align-items: center;
     font-size: 8.0em;
     line-height: 1.5em;
-    color: #888;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
+.Tile > svg { opacity: 0.5 }
+
 .playing {
-    animation: bounce 1s linear infinite;
+    animation: bounce 0.75s linear infinite;
 }
 
 @keyframes bounce {
