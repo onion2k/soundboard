@@ -6,3 +6,8 @@ A react soundboard. One day it'll be native.
 
 * Playback control
 * Background image prop
+* Sound upload
+* API
+* Mobile layout
+* Header image
+* Animated background
