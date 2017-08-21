@@ -1,9 +1,8 @@
 .App {
-  height: calc(100vh - 40px);
-  padding: 20px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  align-content: center;
+    padding: 20px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-content: center;
 }

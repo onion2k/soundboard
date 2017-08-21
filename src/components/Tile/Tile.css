@@ -1,20 +1,32 @@
 .Tile {
-    background-color: #eee;
-    border: 3px solid #bbb;
+    min-height: 25vmin;
+    background-color: #191919;
+    border: 2px solid #F900FF;
     border-radius: 20px;
     display: grid;
     justify-items: center;
     align-items: center;
     font-size: 8.0em;
     line-height: 1.5em;
-    color: #fff;
+    color: #476BED;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    box-shadow: 0px 0px 20px 3px #EF2AF4, inset 0px 0px 10px 3px #EF2AF4;
 }
 
-.Tile > svg { opacity: 0.5 }
+.Tile.none {
+    border: 3px solid #23676F;
+    box-shadow: 0px 0px 15px 3px #23676F, inset 0px 0px 5px 0px #23676F;
+}
+
+.Tile > svg {
+    opacity: 0.75;
+}
+
+.Tile.none > svg {
+    opacity: 0.1;
+}
 
 .Tile > svg.playing {
     opacity: 1;
