@@ -16,13 +16,14 @@
 
 .Tile > svg { opacity: 0.5 }
 
-.playing {
+.Tile > svg.playing {
+    opacity: 1;
     animation: bounce 0.75s linear infinite;
 }
 
 @keyframes bounce {
-  0%       { transform: translateY(0) scale(1); }
-  25%, 75% { transform: translateY(-6%) scale(1.1); }
-  50%      { transform: translateY(-9%) scale(1.1); }
-  100%     { transform: translateY(0) scale(1); }
+  0%       { transform: translateY(0) scale(1) rotate(0); }
+  25%, 75% { transform: translateY(-8%) scale(1.2) rotate(-5deg); }
+  50%      { transform: translateY(-12%) scale(1.2) rotate(5deg); }
+  100%     { transform: translateY(0) scale(1) rotate(0); }
 }

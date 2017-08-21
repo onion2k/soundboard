@@ -4,13 +4,23 @@ import './Tile.css';
 
 import TiMediaPlay from 'react-icons/lib/ti/media-play';
 import TiMediaStop from 'react-icons/lib/ti/media-stop';
+import TiTimes from 'react-icons/lib/ti/times';
 
 function Play(props) {
   const playing = props.playing;
+  if (!props.url) return <TiTimes />;
   if (playing===Sound.status.PLAYING) {
     return <TiMediaStop className='playing' />;
   }
   return <TiMediaPlay />;
+}
+
+function SoundPlayer(props) {
+    if (props.url) {
+        return <Sound {...props} />;
+    } else {
+        return null;
+    }
 }
 
 class Tile extends Component {
@@ -32,10 +42,10 @@ class Tile extends Component {
   }
   render(props) {
     return (
-      <div className="Tile" onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
-        <Play playing={this.state.playing} />
-        <Sound url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
-      </div>
+        <div className="Tile" onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
+            <Play url={this.props.sound} playing={this.state.playing} />
+            <SoundPlayer url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
+        </div>
     );
   }
 }
