@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/Header/Header';
+import Settings from './components/Settings/Settings';
 import Tile from './components/Tile/Tile';
 
 class App extends Component {
@@ -32,10 +33,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Header>Synthboard</Header>
+                <Header>New Retro Synthboard</Header>
                 <div className="Soundboard">
                     { this.board }
                 </div>
+                <Settings></Settings>
             </div>
         );
     }
