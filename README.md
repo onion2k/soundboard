@@ -8,6 +8,6 @@ A react soundboard. One day it'll be native.
 * Background image prop
 * Sound upload
 * API
-* Mobile layout
+* DONE - Mobile layout
 * Header image
-* Animated background
+* Abandoned - Animated background
