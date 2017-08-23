@@ -3,10 +3,16 @@
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 15fr 6fr;
+    align-content: center;
+    justify-content: center;
 }
 
 .Soundboard {
-    padding: 20px;
+    padding: 0 20px;
     margin-right: 40px;
     display: grid;
     grid-gap: 30px;

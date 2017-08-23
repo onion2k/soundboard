@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/Header/Header';
+import Sequencer from './components/Sequencer/Sequencer';
 import Settings from './components/Settings/Settings';
 import Tile from './components/Tile/Tile';
 
@@ -34,9 +35,8 @@ class App extends Component {
         return (
             <div className="App">
                 <Header>New Retro Synthboard</Header>
-                <div className="Soundboard">
-                    { this.board }
-                </div>
+                <div className="Soundboard">{ this.board }</div>
+                <Sequencer>16 Track</Sequencer>
                 <Settings></Settings>
             </div>
         );

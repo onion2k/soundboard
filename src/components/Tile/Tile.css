@@ -1,5 +1,4 @@
 .Tile {
-    min-height: 25vmin;
     background-color: #191919;
     border: 2px solid #F900FF;
     border-radius: 20px;
@@ -13,12 +12,6 @@
     background-size: cover;
     background-position: center;
     box-shadow: 0px 0px 20px 3px #EF2AF4, inset 0px 0px 10px 3px #EF2AF4;
-}
-
-@media (min-width: 900px) {
-    .Tile {
-        min-height: 20vmin;    
-    }
 }
 
 .Tile.none {
