@@ -27,6 +27,7 @@
     margin: 0;
     transform: rotate(-90deg);
     white-space: nowrap;
+    align-self: center;
 }
 
 .Settings.open {
@@ -40,8 +41,10 @@
 }
 
 .Settings > div.panel > div {
-    background-color: #fff;
+    background-color: #090909;
+    color: #fff;
+    padding: 30px;
     width: 400px;
     height: 600px;
-    box-shadow: 0px 0px 20px 3px #2873F4, inset 0px 0px 10px 3px #2873F4;    
+    box-shadow: 0px 0px 10px 1px #2873F4, inset 0px 0px 5px 1px #2873F4;    
 }
