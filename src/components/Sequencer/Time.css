@@ -1,0 +1,13 @@
+.Time {
+    position: absolute;
+    background-color: #277182;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    animation: timeline 16s linear infinite;
+}
+
+@keyframes timeline {
+  0%       { right: 100%; }
+  100%     { right: 0; }
+}
