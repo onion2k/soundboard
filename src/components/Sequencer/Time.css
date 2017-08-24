@@ -4,7 +4,7 @@
     width: 1px;
     top: 0;
     bottom: 0;
-    animation: timeline 16s linear infinite;
+    animation: timeline 7.5s linear infinite;
 }
 
 @keyframes timeline {
