@@ -6,63 +6,57 @@ import Track from './Track.js';
 import Beats from './Beats.js';
 
 class Sequencer extends Component {
-  render(props) {
-    return (
-        <div className="Sequencer">
+    constructor(){
 
-            <div className="TrackList">
+        super();
 
-                <Track title="ARP 120" beats={null}></Track>
-                <Track title="Beats 110" beats={null}></Track>
-                <Track title="Beats 130" beats={null}></Track>
-                <Track title="Bell 120" beats={null}></Track>
+        this.state = {
+            tracks: [
+                { title: 'ARP 120', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Beats 110', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Beats 130', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Bell 120', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Clave', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Drum 125', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'jBass 1', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'jBass 2', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'jSynth', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Juno Bell', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Kick 1', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Kick 2', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Ober 110', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Open Beat', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Open Hat', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] },
+                { title: 'Rim', beats: [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false] }
+            ]
+        }
 
-                <Track title="Clave" beats={null}></Track>
-                <Track title="Drum 125" beats={null}></Track>
-                <Track title="jBass 1" beats={null}></Track>
-                <Track title="jBass 2" beats={null}></Track>
+    }
 
-                <Track title="jSynth" beats={null}></Track>
-                <Track title="Juno Bell" beats={null}></Track>
-                <Track title="Kick 1" beats={null}></Track>
-                <Track title="Kick 2" beats={null}></Track>
+    render(props) {
 
-                <Track title="Ober 110" beats={null}></Track>
-                <Track title="Open Beat" beats={null}></Track>
-                <Track title="Open Hat" beats={null}></Track>
-                <Track title="Rim" beats={null}></Track>
+        var tracks = this.state.tracks.map((b)=>{
+            return <Track title={ b.title } />
+        });
+        var beats = this.state.tracks.map((b,i)=>{
+            return <Beats beats={ b.beats } />
+        });
 
-            </div>
+        return (
+            <div className="Sequencer">
 
-            <div className="TrackBeats">
+                <div className="TrackList">
+                    { tracks }
+                </div>
 
-                <Beats title="ARP 120" beats={null}></Beats>
-                <Beats title="Beats 110" beats={null}></Beats>
-                <Beats title="Beats 130" beats={null}></Beats>
-                <Beats title="Bell 120" beats={null}></Beats>
-
-                <Beats title="Clave" beats={null}></Beats>
-                <Beats title="Drum 125" beats={null}></Beats>
-                <Beats title="jBass 1" beats={null}></Beats>
-                <Beats title="jBass 2" beats={null}></Beats>
-
-                <Beats title="jSynth" beats={null}></Beats>
-                <Beats title="Juno Bell" beats={null}></Beats>
-                <Beats title="Kick 1" beats={null}></Beats>
-                <Beats title="Kick 2" beats={null}></Beats>
-
-                <Beats title="Ober 110" beats={null}></Beats>
-                <Beats title="Open Beat" beats={null}></Beats>
-                <Beats title="Open Hat" beats={null}></Beats>
-                <Beats title="Rim" beats={null}></Beats>
-
-                <Time></Time>
+                <div className="TrackBeats">
+                    { beats }            
+                    <Time></Time>
+                </div>
 
             </div>
-
-        </div>
-    );
-  }
+        );
+    }
 }
 
 export default Sequencer;

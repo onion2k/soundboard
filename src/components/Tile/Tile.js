@@ -24,30 +24,33 @@ function SoundPlayer(props) {
 }
 
 class Tile extends Component {
-  constructor(){
-    super();
-    this.state = { playing: Sound.status.STOPPED };
-    this.togglePlaying = this.togglePlaying.bind(this);
-    this.finished = this.finished.bind(this);
-  }
-  togglePlaying(e){
-      if (this.state.playing === Sound.status.STOPPED) {
-          this.setState({ playing: Sound.status.PLAYING });
-      } else {
-          this.setState({ playing: Sound.status.STOPPED });
-      }
-  }
-  finished(e){
-      this.setState({ playing: Sound.status.STOPPED })
-  }
-  render(props) {
-    return (
-        <div className={`Tile  ${this.props.sound ? '' : 'none'}`} onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
-            <Play url={this.props.sound} playing={this.state.playing} />
-            <SoundPlayer url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
-        </div>
-    );
-  }
+    constructor(){
+
+        super();
+        this.state = { playing: Sound.status.STOPPED };
+
+        this.togglePlaying = this.togglePlaying.bind(this);
+        this.finished = this.finished.bind(this);
+
+    }
+    togglePlaying(e){
+        if (this.state.playing === Sound.status.STOPPED) {
+            this.setState({ playing: Sound.status.PLAYING });
+        } else {
+            this.setState({ playing: Sound.status.STOPPED });
+        }
+    }
+    finished(e){
+        this.setState({ playing: Sound.status.STOPPED })
+    }
+    render(props) {
+        return (
+            <div className={`Tile  ${this.props.sound ? '' : 'none'}`} onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
+                <Play url={this.props.sound} playing={this.state.playing} />
+                <SoundPlayer url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
+            </div>
+        );
+    }
 }
 
 export default Tile;
