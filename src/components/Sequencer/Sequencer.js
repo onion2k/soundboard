@@ -5,8 +5,6 @@ import Time from './Time.js';
 import Track from './Track.js';
 import Beats from './Beats.js';
 
-import { Howl } from 'howler';
-
 class Sequencer extends Component {
     constructor(props){
 
@@ -16,7 +14,7 @@ class Sequencer extends Component {
             return {
                 title: sound.title,
                 sound: sound.sound,
-                howl: new Howl({src: [sound.sound], preload: true}),
+                howl: sound.howl,
                 beats: [
                     false,false,false,false,false,false,false,false,
                     false,false,false,false,false,false,false,false,

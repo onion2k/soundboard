@@ -1,53 +1,50 @@
 import React, { Component } from 'react';
-import Sound from 'react-sound';
+
 import './Tile.css';
 
 import TiMediaPlay from 'react-icons/lib/ti/media-play';
 import TiMediaStop from 'react-icons/lib/ti/media-stop';
 import TiTimes from 'react-icons/lib/ti/times';
 
+const STOPPED = 0;
+const PLAYING = 1;
+
 function Play(props) {
   const playing = props.playing;
   if (!props.url) return <TiTimes />;
-  if (playing===Sound.status.PLAYING) {
+  if (playing===PLAYING) {
     return <TiMediaStop className='playing' />;
   }
   return <TiMediaPlay />;
 }
 
-function SoundPlayer(props) {
-    if (props.url) {
-        return <Sound {...props} />;
-    } else {
-        return null;
-    }
-}
-
 class Tile extends Component {
-    constructor(){
+    constructor(props){
 
-        super();
-        this.state = { playing: Sound.status.STOPPED };
+        super(props);
+
+        props.howl.on('end', this.finished.bind(this));
+        this.state = { playing: STOPPED, howl: props.howl };
 
         this.togglePlaying = this.togglePlaying.bind(this);
-        this.finished = this.finished.bind(this);
 
     }
     togglePlaying(e){
-        if (this.state.playing === Sound.status.STOPPED) {
-            this.setState({ playing: Sound.status.PLAYING });
-        } else {
-            this.setState({ playing: Sound.status.STOPPED });
-        }
+        // if (this.state.playing === STOPPED) {
+            this.state.howl.play();
+            this.setState({ playing: PLAYING });
+        // } else {
+        //     this.state.howl.stop();
+        //     this.setState({ playing: STOPPED });
+        // }
     }
     finished(e){
-        this.setState({ playing: Sound.status.STOPPED })
+        this.setState({ playing: STOPPED })
     }
     render(props) {
         return (
             <div className={`Tile  ${this.props.sound ? '' : 'none'}`} onClick={ this.togglePlaying } style={{ backgroundImage: 'url('+this.props.background+')' }}>
                 <Play url={this.props.sound} playing={this.state.playing} />
-                <SoundPlayer url={this.props.sound} playStatus={this.state.playing} autoLoad={true} onFinishedPlaying={ this.finished } />
             </div>
         );
     }
