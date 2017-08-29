@@ -41,6 +41,7 @@ class App extends Component {
             <div className="App">
                 <Header>New Retro Synthboard</Header>
                 <div className="Soundboard">{ this.board }</div>
+                <div>Song controls</div>
                 <Sequencer sounds={ this.state.sounds }></Sequencer>
                 <Settings></Settings>
             </div>
