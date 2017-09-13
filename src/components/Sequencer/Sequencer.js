@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Sequencer.css';
 
-import Time from './Time.js';
-import Track from './Track.js';
+import TimeLine from './TimeLine.js';
 import Beats from './Beats.js';
 
 class Sequencer extends Component {
@@ -88,20 +87,16 @@ class Sequencer extends Component {
 
     render(props) {
 
-        var tracks = this.state.tracks.map((b)=>{
-            return <Track key={ b.title } title={ b.title } />
-        });
 
         var beats = this.state.tracks.map((b,t)=>{
-            return <Beats key={ b.title } beats={ b.beats } onClick={ (i)=>{ this.toggleBeat(t, i); } } />
+            return <Beats key={ b.title } title={ b.title } beats={ b.beats } onClick={ (i)=>{ this.toggleBeat(t, i); } } />
         });
 
         return (
             <div className="Sequencer">
-                <div className="TrackList">{ tracks }</div>
                 <div className="TrackBeats">
                     { beats }            
-                    <Time></Time>
+                    <TimeLine></TimeLine>
                 </div>
             </div>
         );
