@@ -1,4 +1,4 @@
-.SeqTrack {
+.Sequence {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 1fr 9fr;
@@ -8,7 +8,7 @@
 
 .Title {
     text-align: left;
-    font-size: 0.2em;
+    font-size: 0.8em;
     color: #EEE651;
 }
 

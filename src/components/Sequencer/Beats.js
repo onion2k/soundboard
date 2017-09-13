@@ -12,7 +12,7 @@ class Beats extends Component {
             return <div key={ 'b'+i } className={ b ? 'beat' : '' } onClick={ (e)=>this.props.onClick(i) } />
         });
         return (
-            <div className="SeqTrack">
+            <div className="Sequence">
                 <div className="Title">{ title }</div>
                 <div className="Beats">{ beats }</div>
             </div>

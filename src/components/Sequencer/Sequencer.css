@@ -2,10 +2,13 @@
     font-family: 'Righteous', cursive;
     color: #000000;
     text-align: center;
-    font-size: 4.0em;
     text-transform: uppercase;
     padding: 20px;
     margin-right: 40px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 16fr;
 }
 
 .TrackBeats {
@@ -14,4 +17,12 @@
     grid-gap: 2px;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(16, 1fr);
+}
+
+.Track {
+    display: grid;
+    color: #5AEE51;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 9fr;
+    text-align: left;
 }

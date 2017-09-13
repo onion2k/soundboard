@@ -94,6 +94,7 @@ class Sequencer extends Component {
 
         return (
             <div className="Sequencer">
+                <div className="Track">Track</div>
                 <div className="TrackBeats">
                     { beats }            
                     <TimeLine></TimeLine>
