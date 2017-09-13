@@ -61,7 +61,6 @@ class Sequencer extends Component {
             if (deltaBeat > 7500/32) {
                 self.state.tracks.forEach((track)=>{
                     if (track.beats[beatCounter]===true) {
-                        console.log(beatCounter);
                         track.howl.play();
                     }
                 });                
