@@ -22,7 +22,7 @@ class Sequencer extends Component {
             }
         });
 
-        this.state = { tracks: tracks };
+        this.state = { tracks: tracks, pos: 0 };
         this.toggleBeat = this.toggleBeat.bind(this);
 
     }
@@ -44,7 +44,7 @@ class Sequencer extends Component {
 
         var self = this;
     
-        var play = function(){
+        var play = ()=>{
     
             requestAnimationFrame(play);
     
@@ -54,30 +54,24 @@ class Sequencer extends Component {
             deltaBeat += delta;
             deltaLoop += delta;
             
+            if (deltaLoop > 7500) {
+                deltaLoop = beatCounter = 0;
+            }
+    
             if (deltaBeat > 7500/32) {
-
-                deltaBeat = deltaBeat - 7500/32;
-                beatCounter++;
-
                 self.state.tracks.forEach((track)=>{
-                    if (track.beats[beatCounter]===true) { 
+                    if (track.beats[beatCounter]===true) {
+                        console.log(beatCounter);
                         track.howl.play();
                     }
                 });                
-            }
-    
-            if (deltaLoop > 7500) {
-                deltaLoop = beatCounter = 0;
-
-                self.state.tracks.forEach((track)=>{
-                    if (track.beats[beatCounter]===true) { 
-                        track.howl.play();
-                    }
-                });
-
+                deltaBeat = deltaBeat - 7500/32;
+                beatCounter++;
             }
     
             lastTime = currentTime;
+
+            this.setState({ pos: deltaLoop })
     
         }
 
@@ -97,7 +91,7 @@ class Sequencer extends Component {
                 <div className="Track">Track</div>
                 <div className="TrackBeats">
                     { beats }            
-                    <TimeLine></TimeLine>
+                    <TimeLine pos={ this.state.pos }></TimeLine>
                 </div>
             </div>
         );

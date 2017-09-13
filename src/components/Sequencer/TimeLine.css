@@ -4,10 +4,4 @@
     width: 1px;
     top: 0;
     bottom: 0;
-    animation: timeline 7.5s linear infinite;
-}
-
-@keyframes timeline {
-  0%       { right: 90%; }
-  100%     { right: 0; }
 }
