@@ -2,19 +2,22 @@
 
 .TimeLine {
     position: absolute;
-    background-color: #277182;
-    width: 1px;
+    border-right: 1px solid rgba(39,113,130,0.5);
+    width: 40px;
     top: -23px;
     bottom: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(39,113,130,0.5) 98%,rgba(39,113,130,0.75) 100%);
 }
 
 .time {
     font-family: 'Share Tech Mono';
     position: absolute;
     top: 0;
-    left: -100px;
+    left: -55px;
     right: 0;
     padding-right: 5px;
     text-align: right;
     color: #277182;
+    background-color: #000;
+    border: 1px solid #277182;
 }

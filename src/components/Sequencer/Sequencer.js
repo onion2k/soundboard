@@ -80,7 +80,6 @@ class Sequencer extends Component {
 
     render(props) {
 
-
         var beats = this.state.tracks.map((b,t)=>{
             return <Beats key={ b.title } title={ b.title } beats={ b.beats } onClick={ (i)=>{ this.toggleBeat(t, i); } } />
         });
