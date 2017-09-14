@@ -15,7 +15,9 @@ class TimeLine extends Component {
     render(props) {
         let style = { 'right': (90-(this.state.pos/7500)*90)+'%' }
         return (
-            <div className="TimeLine" style={ style }></div>
+            <div className="TimeLine" style={ style }>
+                <div className="time">{ String(this.state.pos / 1000).padEnd(5,'0') }</div>
+            </div>
         );
     }
 }
